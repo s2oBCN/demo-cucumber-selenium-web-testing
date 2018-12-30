@@ -1,0 +1,57 @@
+/* line 1, ../scss/main.scss */
+article.row, h1, .table {
+  margin: 15px auto;
+  padding: 15px;
+  width: 960px;
+}
+
+/* line 6, ../scss/main.scss */
+form label, form .input-group-addon {
+  min-width: 80px;
+  text-align: left;
+}
+
+/* line 12, ../scss/main.scss */
+article.row {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 18, ../scss/main.scss */
+h1 {
+  text-align: center;
+  background: #000056;
+  color: #fff;
+}
+
+/* line 24, ../scss/main.scss */
+form {
+  padding: 15px 10px;
+  border: 1px solid #CACACA;
+  border-radius: 10px;
+}
+/* line 35, ../scss/main.scss */
+form .input-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* line 44, ../scss/main.scss */
+.table-holder {
+  padding: 10px 20px;
+}
+
+/* line 47, ../scss/main.scss */
+.table {
+  /*  overflow: auto;
+    display: block;*/
+}
+/* line 52, ../scss/main.scss */
+.table img {
+  margin: 3px 10px;
+}
+/* line 55, ../scss/main.scss */
+.table th {
+  background: #3F3F6F;
+  color: #fff;
+}

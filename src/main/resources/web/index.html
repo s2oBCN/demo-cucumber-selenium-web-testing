@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<h1>Client reservation page</h1>
+<article class="row">
+    <section class="col-sm-6">
+        <form id="frmItem">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">ID #</span>
+                <input type="text" id="txtID" data-id="" readonly/>
+            </div>
+            <div class="input-group">
+                <label for="txtName">Name:</label>
+                <input type="text" id="txtName" required/>
+            </div>
+            <div class="input-group">
+                <label for="txtPhone">Phone:</label>
+                <input type="tel" id="txtPhone" required/>
+            </div>
+            <div class="input-group">
+                <label for="txtEmail">Email:</label>
+                <input type="email" id="txtEmail" required/>
+            </div>
+            <div class="input-group">
+                <label for="txtDate">Date:</label>
+                <input type="text" id="txtDate" required/>
+            </div>
+            <div class="input-group">
+                <label for="txtSearch">Time:</label>
+                <input type="search" list="time" id="txtSearch" required/>
+                <datalist id="time">
+                    <option value="12:30">
+                    <option value="13:00">
+                    <option value="13:30">
+                    <option value="14:00">
+                    <option value="14:30">
+                    <option value="15:00">
+                    <option value="20:00">
+                    <option value="20:30">
+                    <option value="21:00">
+                    <option value="21:30">
+                    <option value="22:00">
+                </datalist>
+            </div>
+            <div class="input-group">
+                <label for="txtNumber">Number:</label>
+                <input type="number" id="txtNumber" min="1" max="10" required/>
+            </div>
+            <div class="input-group">
+                <label for="txtColor">Table color:</label>
+                <input type="color" id="txtColor"/>
+            </div>
+            <button value="Save" id="btnSave"/>
+            Save</button>
+        </form>
+    </section>
+    <section class="col-sm-6">
+        <div id="display">
+            <h2>Preview</h2>
+        </div>
+    </section>
+</article>
+<div class="table-holder table-responsive">
+    <table id="tblList" class="table table-hover table-striped">
+    </table>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/todc-bootstrap/3.3.6-3.3.6/js/bootstrap.min.js"></script>
+<script src="js/crud.js"></script>
+<script src="js/display.js"></script>
+
+</body>
+</html>

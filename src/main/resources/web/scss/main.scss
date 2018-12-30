@@ -1,0 +1,59 @@
+%centeredblock {
+  margin: 15px auto; 
+  padding: 15px;
+  width: 960px;
+}
+%formlabel {
+  min-width: 80px;
+  text-align: left;
+}
+
+article {
+  &.row {
+    max-width: 100%;
+    display: block;
+    @extend %centeredblock;
+  }
+}
+h1 {
+  @extend %centeredblock;
+    text-align: center;
+    background: #000056;
+    color: #fff;
+}
+form {
+  padding: 15px 10px;
+  border: 1px solid #CACACA;
+  border-radius: 10px;
+  
+  & label {
+    @extend %formlabel;
+  }
+  & .input-group-addon {
+    @extend %formlabel;
+  }
+  & .input-group {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  & input {
+
+  }
+}
+
+.table-holder {
+  padding: 10px 20px;
+}
+.table {
+  @extend %centeredblock;
+/*  overflow: auto;
+  display: block;*/
+  
+  & img {
+    margin: 3px 10px;
+  }
+  & th {
+    background: #3F3F6F;
+    color: #fff;
+  }
+}
