@@ -60,3 +60,8 @@ gradle test -Dcucumber.options="--tags @something"
 ## TODO
 Use https://github.com/bonigarcia/webdrivermanager
 
+
+* docker-compose up
+* Selenium Grid Console http://localhost:4444/grid/console
+* Zalenium http://localhost:4444/grid/admin/live
+

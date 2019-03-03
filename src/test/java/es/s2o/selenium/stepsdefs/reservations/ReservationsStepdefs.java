@@ -28,7 +28,7 @@ public class ReservationsStepdefs {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public static final String FILE = "file:";
-    public static final String HOME = "web/reservationList.html";
+    public static final String HOME = "reservationList.html";
 
     @Steps
     private ReservationService reservationService;
@@ -54,8 +54,7 @@ public class ReservationsStepdefs {
     public void iMInTheReservationsPage() throws Throwable {
         LOGGER.debug("iMInTheReservationsPage starts");
 
-        URL resourceFile = Thread.currentThread().getContextClassLoader().getResource(HOME);
-        reservationPage.openAt(FILE + resourceFile.getPath());
+        reservationPage.openAt("https://s2obcn.github.io/"+ HOME);
     }
 
     @When("^I register the following reservations:$")
