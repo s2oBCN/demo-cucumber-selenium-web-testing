@@ -6,6 +6,9 @@ Project to test Serenity with Selenium and Cucumber
 * The project is following the Page Object pattern. Where a class express the interface of a page and nothing related to a test can be inside the class. So:
   * No __webElement__ should be exposed from a page object.
   * No assert can be done inside a page object. So, be careful if you write a mehtod to verify anything in a page class, ie returns a boolean, that your are not coupled to a test.
+  
+# Responsible
+Sergio Sacristan extra@sacristan.com.es
 
 ## Getting started
 You can improve __everything__ in the project with a PR:
