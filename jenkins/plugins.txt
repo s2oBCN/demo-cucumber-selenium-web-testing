@@ -1,7 +1,12 @@
 blueocean:latest
-pipeline:latest
-configuration-as-code-support:latest
+pipeline-stage-view:latest
+credentials-binding:latest
+ssh-credentials:latest
+ssh-slaves:latest
 job-dsl:latest
 anything-goes-formatter:latest
 ws-cleanup:latest
 htmlpublisher:latest
+matrix-auth:latest
+configuration-as-code-support:latest
+docker-plugin:latest

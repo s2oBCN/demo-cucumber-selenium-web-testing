@@ -16,8 +16,11 @@ You can improve __everything__ in the project with a PR:
 * Make a pull request!
 * Thank you in advance for your contribution!!!!
     
-### Prerequisites
+### Requirements
 * **Git**:  [See the Git best practices](docs/git-best-practices.md).
+* Install [Docker](http://docker.io).
+* Install [Docker-compose](http://docs.docker.com/compose/install/).
+* Clone this repository
 * **Java Development Kit**: [See the Java best practices](docs/java-best-practices.md).
 * **Gradle**: Use gradle wrapper.
 * **IDE**: see [intelliJ](docs/intelliJ.md)/[eclipse](docs/eclipse.md), depending on your prefered IDE.
@@ -57,11 +60,20 @@ You can improve __everything__ in the project with a PR:
 ### Execution
 gradle test -Dcucumber.options="--tags @something"
 
-## TODO
-Use https://github.com/bonigarcia/webdrivermanager
+### CI
+To startup a Jenkins instance run it:
 
+```
+$ jenkins/docker-compose up -d
+```
 
-* docker-compose up
 * Selenium Grid Console http://localhost:4444/grid/console
 * Zalenium http://localhost:4444/grid/admin/live
 
+## TODO
+Use https://github.com/bonigarcia/webdrivermanager
+
+https://automatingguy.com/2017/11/06/jenkins-pipelines-simple-delivery-flow/      
+docker rm $(docker ps -a -q)
+docker volume rm $(docker volume ls -qf dangling=true)       
+    

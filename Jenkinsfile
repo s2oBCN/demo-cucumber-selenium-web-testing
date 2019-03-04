@@ -2,10 +2,19 @@
 
 node('master')
 {
-    stage('Checkout')
-    {
-        step([$class: 'WsCleanup'])
-        checkout scm
+    stage('Prepare') {
+        deleteDir()
+        parallel Checkout: {
+            checkout scm
+        }, 'Run Zalenium': {
+            dockerCmd '''run -d --name zalenium -p 4444:4444 \
+                                -v /var/run/docker.sock:/var/run/docker.sock \
+                                --network="host" \
+                                --privileged dosel/zalenium start \
+                                --videoRecordingEnabled true \
+                                --chromeContainers 1 \
+                                --firefoxContainers 0'''
+        }
     }
 
     stage('Compile')
@@ -19,6 +28,8 @@ node('master')
         //currentBuild.rawBuild.project.setDescription("<iframe src='http://${hostname}:4444/grid/admin/live' width='1400' height='500'></iframe>")
         gradle "test"
 
+        dockerCmd 'stop zalenium'
+        dockerCmd 'rm zalenium'
     }
 
     stage("Publish")
@@ -39,7 +50,7 @@ node('master')
     }
 }
 
-void gradle(String tasks, String switches = null) {
+def gradle(String tasks, String switches = null) {
     String gradleCommand = "";
     gradleCommand += './gradlew '
     gradleCommand += tasks
@@ -49,5 +60,10 @@ void gradle(String tasks, String switches = null) {
         gradleCommand += switches
     }
 
-    sh script:gradleCommand.toString(), returnStatus: true
+    return sh (script:gradleCommand.toString(), returnStatus: true)
+}
+
+def dockerCmd(args) {
+    assert args != null
+    return sh(script: "docker ${args}", returnStdout: true)
 }
